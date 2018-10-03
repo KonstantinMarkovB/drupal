@@ -1,0 +1,65 @@
+<?php
+
+use Drupal\Core\Url;
+
+function birthday_toolbar() {	
+  // Build a list of links for the menu.
+  $links = [];
+
+  // Add a link to enable all examples.
+  $links['list'] = [
+    'title' => t('Список именинников'),
+    'url' => Url::fromRoute('birthday_list'),
+  ];
+  
+  $links['add'] = [
+    'title' => t('Добавить именинников'),
+    'url' => Url::fromRoute('birthday_add'),
+  ];
+  
+  $links['delete'] = [
+    'title' => t('Удалить именинников'),
+    'url' => Url::fromRoute('birthday_delete'),
+  ];
+  
+  $links['edit'] = [
+    'title' => t('Редактировать именинников'),
+    'url' => Url::fromRoute('birthday_edit'),
+  ];
+  
+  $links['groupEdit'] = [
+    'title' => t('Редактировать описание групп'),
+    'url' => Url::fromRoute('group_edit'),
+  ];
+
+  // Create the examples toolbar render array.
+  $items['birthay'] = [
+    '#type' => 'toolbar_item',
+    'tab' => [
+      '#type' => 'link',
+      '#title' => t('Именинники'),
+      '#url' => Url::fromRoute('<front>'),
+      '#attributes' => [
+        'title' => t('Именинники'),
+        //'class' => ['toolbar-icon', 'toolbar-icon-examples'],
+      ],
+    ],
+    'tray' => [
+      '#heading' => t('Именинники'),
+      'shortcuts' => [
+        '#theme' => 'links__toolbar_birthday',
+        '#links' => $links,
+        '#attributes' => [
+          'class' => ['toolbar-menu'],
+        ],
+      ],
+    ],
+    '#weight' => 99,
+  ];
+
+  return $items;
+}
+
+/**
+ * @} End of 'defgroup examples'.
+ */

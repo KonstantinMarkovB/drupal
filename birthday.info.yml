@@ -1,0 +1,8 @@
+name: Birthday
+type: module
+description: 'Displays the list of birthday parties.'
+package: Custom
+core: 8.x
+dependencies:
+  - drupal:node
+  - drupal:toolbar

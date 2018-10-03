@@ -1,0 +1,14 @@
+birthday.list:
+  version: 1.x
+  css:
+    theme:
+      css/birthday_list.css: {}
+      
+birthday.edit:
+  version: 1.x
+  css:
+    theme:
+      css/birthday_edit.css: {}
+  js:
+    dependencies:
+      - core/jquery

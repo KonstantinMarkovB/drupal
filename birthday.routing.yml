@@ -1,0 +1,41 @@
+birthday_list1:
+  path: '/birthday/list1'
+  defaults:
+    _controller: '\Drupal\birthday\Controller\BirthdayController::entryList'
+  requirements:
+    _permission: 'access content'
+    
+birthday_list:
+  path: '/birthday/list'
+  defaults:
+    _form: '\Drupal\birthday\Form\BirthdayListForm'
+  requirements:
+    _permission: 'access content'
+   
+birthday_add:
+  path: '/birthday/add'
+  defaults:
+    _form: '\Drupal\birthday\Form\BirthdayAddForm'
+  requirements:
+    _permission: 'access admin'
+    
+birthday_delete:
+  path: '/birthday/delete'
+  defaults:
+    _form: '\Drupal\birthday\Form\BirthdayDeleteForm'
+  requirements:
+    _permission: 'access admin'
+    
+birthday_edit:
+  path: '/birthday/edit'
+  defaults:
+    _form: '\Drupal\birthday\Form\BirthdayEditForm'
+  requirements:
+    _permission: 'access admin'
+   
+group_edit:
+  path: '/birthday/edit/group'
+  defaults:
+    _form: '\Drupal\birthday\Form\GroupDescriptionEditForm'
+  requirements:
+    _permission: 'access admin'
